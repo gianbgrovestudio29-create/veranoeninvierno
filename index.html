@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VERANO EN INVIERNO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#020202;
+font-family:'Montserrat',sans-serif;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+padding:70px 8%;
+overflow:hidden;
+background:
+linear-gradient(to right, rgba(0,0,0,.95) 25%, rgba(0,0,0,.65) 55%, rgba(0,0,0,.4)),
+url('cover1.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left, rgba(255,0,140,.25), transparent 35%),
+radial-gradient(circle at right, rgba(0,153,255,.20), transparent 40%);
+}
+
+.content{
+position:relative;
+z-index:2;
+max-width:700px;
+}
+
+.top-text{
+font-size:13px;
+letter-spacing:10px;
+color:#ff2ca0;
+margin-bottom:20px;
+text-transform:uppercase;
+}
+
+.title{
+font-family:'Bebas Neue',sans-serif;
+line-height:.85;
+margin-bottom:25px;
+}
+
+.title .pink{
+display:block;
+font-size:170px;
+color:#ff0a8c;
+text-shadow:
+0 0 10px #ff0a8c,
+0 0 25px #ff0a8c,
+0 0 50px #ff0a8c;
+}
+
+.title .blue{
+display:block;
+font-size:165px;
+color:#3ea6ff;
+text-shadow:
+0 0 10px #3ea6ff,
+0 0 25px #3ea6ff,
+0 0 50px #3ea6ff;
+}
+
+.desc{
+font-size:30px;
+line-height:1.7;
+font-family:'Caveat',cursive;
+max-width:650px;
+margin-bottom:40px;
+text-shadow:0 0 10px rgba(0,0,0,.7);
+}
+
+.btn{
+display:inline-block;
+padding:20px 45px;
+border-radius:60px;
+text-decoration:none;
+font-weight:700;
+font-size:18px;
+color:white;
+background:linear-gradient(90deg,#ff008c,#2d8cff);
+box-shadow:
+0 0 20px rgba(255,0,140,.6),
+0 0 40px rgba(0,140,255,.4);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+.tracklist{
+position:relative;
+padding:120px 8%;
+background:
+linear-gradient(to bottom, rgba(0,0,0,.85), rgba(0,0,0,.98)),
+url('cover1.jpg');
+background-size:cover;
+background-position:center bottom;
+background-attachment:fixed;
+}
+
+.tracklist::before{
+content:'';
+position:absolute;
+inset:0;
+backdrop-filter:blur(2px);
+}
+
+.track-wrap{
+position:relative;
+z-index:2;
+}
+
+.section-title{
+font-family:'Bebas Neue',sans-serif;
+font-size:120px;
+line-height:.9;
+margin-bottom:20px;
+}
+
+.section-title span{
+color:#ff0a8c;
+text-shadow:0 0 20px #ff0a8c;
+}
+
+.quote{
+font-family:'Caveat',cursive;
+font-size:35px;
+color:#ff52b3;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.song{
+padding:22px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(10px);
+border-radius:20px;
+transition:.3s;
+}
+
+.song:hover{
+transform:translateY(-6px);
+border-color:#ff0a8c;
+box-shadow:0 0 20px rgba(255,0,140,.25);
+}
+
+.song-number{
+font-size:13px;
+letter-spacing:3px;
+color:#ff0a8c;
+margin-bottom:10px;
+}
+
+.song h3{
+font-size:27px;
+margin-bottom:8px;
+font-family:'Caveat',cursive;
+}
+
+.song p{
+opacity:.75;
+font-size:14px;
+}
+
+.footer{
+padding:80px 8%;
+text-align:center;
+background:black;
+}
+
+.footer h2{
+font-size:70px;
+font-family:'Bebas Neue',sans-serif;
+letter-spacing:5px;
+margin-bottom:10px;
+}
+
+.footer p{
+opacity:.6;
+letter-spacing:3px;
+font-size:14px;
+}
+
+@media(max-width:900px){
+
+.title .pink{
+font-size:110px;
+}
+
+.title .blue{
+font-size:105px;
+}
+
+.desc{
+font-size:22px;
+}
+
+.section-title{
+font-size:80px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+padding:50px 7%;
+background-position:72% center;
+}
+
+.top-text{
+font-size:10px;
+letter-spacing:5px;
+}
+
+.title .pink{
+font-size:78px;
+}
+
+.title .blue{
+font-size:76px;
+}
+
+.desc{
+font-size:18px;
+line-height:1.5;
+}
+
+.btn{
+padding:18px 35px;
+font-size:16px;
+}
+
+.section-title{
+font-size:60px;
+}
+
+.quote{
+font-size:26px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<section class="hero">
+
+<div class="content">
+
+<div class="top-text">
+DJ GIAN C & GROVE STUDIO PRESENTAN
+</div>
+
+<h1 class="title">
+<span class="pink">VERANO</span>
+<span class="blue">INVIERNO</span>
+</h1>
+
+<p class="desc">
+18 canciones inspiradas en playas vacías,
+ fuego azul, madrugadas eternas,
+ corazones rotos y recuerdos
+ que todavía siguen vivos.
+</p>
+
+<a href="#tracklist" class="btn">
+ENTRAR AL ÁLBUM
+</a>
+
+</div>
+
+</section>
+
+<section class="tracklist" id="tracklist">
+
+<div class="track-wrap">
+
+<h2 class="section-title">
+TRACK<span>LIST</span>
+</h2>
+
+<p class="quote">
+“Dos climas, una historia, mil sentimientos.”
+</p>
+
+<div class="grid">
+
+<div class="song">
+<div class="song-number">01</div>
+<h3>DOS CLIMAS</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">02</div>
+<h3>VERANO EN INVIERNO</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">03</div>
+<h3>+ FRÍO Q AYER</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">04</div>
+<h3>NOCHES X LA PLAYA</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">05</div>
+<h3>OJOS CANSADOS</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">06</div>
+<h3>M NO MIENTAS</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">07</div>
+<h3>CORA ROTO :)</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">08</div>
+<h3>3ER OJO</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">09</div>
+<h3>FLASHBACKS</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">10</div>
+<h3>FUEGO AZUL</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">11</div>
+<h3>MADRUGÁ</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">12</div>
+<h3>X SI VUELVES</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">13</div>
+<h3>MOJANDO LA CITY</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">14</div>
+<h3>NADIE NOS VIO</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">15</div>
+<h3>KM DE DISTANCIA</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">16</div>
+<h3>POLAROID</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">17</div>
+<h3>EL FINAL DEL VERANO</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">18</div>
+<h3>TÚ + YO EN DICIEMBRE</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+<h2>GROVE STUDIO</h2>
+<p>DJ GIAN C — VERANO EN INVIERNO © 2026</p>
+</footer>
+</body>
+</html>
