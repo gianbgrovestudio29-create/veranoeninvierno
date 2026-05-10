@@ -73,18 +73,17 @@ z-index:-3;
 filter:brightness(.45);
 }
 
-/* EFECTOS */
+/* OVERLAY SUAVE */
 
 .overlay{
 position:absolute;
 inset:0;
 background:
 linear-gradient(to right,
-rgba(0,0,0,.75) 0%,
-rgba(0,0,0,.45) 40%,
-rgba(0,0,0,.1) 100%),
-radial-gradient(circle at left,#ff008840 0%,transparent 40%),
-radial-gradient(circle at right,#008cff40 0%,transparent 40%);
+rgba(0,0,0,.78) 0%,
+rgba(0,0,0,.58) 45%,
+rgba(0,0,0,.25) 75%,
+rgba(0,0,0,0) 100%);
 z-index:-2;
 }
 
@@ -92,9 +91,11 @@ z-index:-2;
 
 .character{
 position:absolute;
-right:-80px;
+right:-120px;
 bottom:0;
-height:100%;
+height:82vh;
+max-height:900px;
+width:auto;
 z-index:2;
 pointer-events:none;
 mix-blend-mode:screen;
@@ -294,9 +295,9 @@ font-size:70px;
 }
 
 .character{
-height:70%;
+height:60vh;
+right:-100px;
 opacity:.5;
-right:-120px;
 }
 
 .desc{
