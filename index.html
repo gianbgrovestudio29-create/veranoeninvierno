@@ -6,7 +6,7 @@
 
 <title>VERANO EN INVIERNO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,14 +14,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#000;
+background:#050505;
 font-family:'Montserrat',sans-serif;
 color:white;
 overflow-x:hidden;
@@ -39,118 +36,9 @@ overflow:hidden;
 
 background:
 linear-gradient(to right,
-rgba(0,0,0,.95) 20%,
-rgba(0,0,0,.6) 55%,
-rgba(0,0,0,.3)),
-url('cover1.jpg');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-}
-
-.hero::before{
-content:'';
-position:absolute;
-inset:0;
-
-background:
-radial-gradient(circle at top left,
-rgba(255,0,140,.25),
-transparent 35%),
-
-radial-gradient(circle at right,
-rgba(0,140,255,.20),
-transparent 40%);
-}
-
-.content{
-position:relative;
-z-index:2;
-max-width:700px;
-}
-
-.top{
-font-size:13px;
-letter-spacing:10px;
-color:#ff2ca0;
-margin-bottom:20px;
-text-transform:uppercase;
-}
-
-.title{
-font-family:'Bebas Neue',sans-serif;
-line-height:.85;
-margin-bottom:25px;
-}
-
-.title span{
-display:block;
-}
-
-.pink{
-font-size:180px;
-color:#ff0a8c;
-
-text-shadow:
-0 0 10px #ff0a8c,
-0 0 30px #ff0a8c,
-0 0 60px #ff0a8c;
-}
-
-.blue{
-font-size:170px;
-color:#3ea6ff;
-
-text-shadow:
-0 0 10px #3ea6ff,
-0 0 30px #3ea6ff,
-0 0 60px #3ea6ff;
-}
-
-.desc{
-font-family:'Caveat',cursive;
-font-size:34px;
-line-height:1.7;
-margin-bottom:40px;
-text-shadow:0 0 15px rgba(0,0,0,.7);
-}
-
-.btn{
-display:inline-block;
-padding:20px 45px;
-border-radius:60px;
-text-decoration:none;
-font-weight:700;
-font-size:18px;
-color:white;
-
-background:
-linear-gradient(90deg,
-#ff008c,
-#2d8cff);
-
-box-shadow:
-0 0 20px rgba(255,0,140,.6),
-0 0 40px rgba(0,140,255,.4);
-
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px) scale(1.05);
-}
-
-/* SOBRE EL ALBUM */
-
-.about{
-position:relative;
-padding:140px 8%;
-
-background:
-linear-gradient(to bottom,
-rgba(0,0,0,.85),
-rgba(0,0,0,.97)),
+rgba(0,0,0,.95) 15%,
+rgba(0,0,0,.70) 45%,
+rgba(0,0,0,.25) 75%),
 url('cover1.jpg');
 
 background-size:cover;
@@ -158,204 +46,275 @@ background-position:center;
 background-attachment:fixed;
 }
 
-.about::before{
-content:'';
+/* PERSONAJE */
+
+.character{
 position:absolute;
-inset:0;
-backdrop-filter:blur(3px);
-}
-
-.about-content{
-position:relative;
+right:-80px;
+bottom:0;
+height:95%;
+max-height:1000px;
 z-index:2;
-max-width:850px;
+pointer-events:none;
+
+filter:
+drop-shadow(0 0 25px #0066ff)
+drop-shadow(0 0 70px rgba(0,102,255,.7));
+
+animation:float 5s ease-in-out infinite;
 }
 
-.section-small{
-letter-spacing:8px;
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-14px);}
+100%{transform:translateY(0px);}
+}
+
+/* CONTENIDO */
+
+.hero-content{
+position:relative;
+z-index:5;
+max-width:720px;
+}
+
+.top-text{
+letter-spacing:10px;
 font-size:12px;
-color:#ff2ca0;
-margin-bottom:20px;
+color:#ff1493;
+margin-bottom:10px;
+font-weight:700;
 }
 
-.about-title{
+.title{
 font-family:'Bebas Neue',sans-serif;
-font-size:120px;
-line-height:.9;
-margin-bottom:30px;
+line-height:.82;
+text-transform:uppercase;
 }
 
-.about-title span{
-color:#ff0a8c;
-text-shadow:0 0 20px #ff0a8c;
+.title .pink{
+font-size:clamp(100px,14vw,230px);
+color:#ff1493;
+
+text-shadow:
+0 0 10px #ff1493,
+0 0 25px #ff1493,
+0 0 60px rgba(255,20,147,.7);
 }
 
-.about-text{
-font-size:22px;
-line-height:1.9;
+.title .blue{
+font-size:clamp(100px,14vw,230px);
+color:#45a6ff;
+
+text-shadow:
+0 0 10px #45a6ff,
+0 0 25px #45a6ff,
+0 0 60px rgba(69,166,255,.7);
+}
+
+.description{
+margin-top:35px;
+font-size:clamp(20px,2vw,30px);
+line-height:1.8;
+max-width:650px;
 font-family:'Caveat',cursive;
-color:#f2f2f2;
+text-shadow:0 0 10px rgba(0,0,0,.7);
+}
+
+.btn{
+display:inline-block;
+margin-top:45px;
+padding:20px 50px;
+border-radius:60px;
+text-decoration:none;
+font-weight:900;
+font-size:18px;
+color:white;
+
+background:linear-gradient(90deg,#ff1493,#3f8cff);
+
+box-shadow:
+0 0 20px rgba(255,20,147,.7),
+0 0 35px rgba(63,140,255,.5);
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.06);
 }
 
 /* TRACKLIST */
 
 .tracklist{
-padding:140px 8%;
-background:#050505;
 position:relative;
+padding:140px 8%;
+
+background:
+linear-gradient(to bottom,
+rgba(0,0,0,.75),
+rgba(0,0,0,.92)),
+url('cover2.jpg');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
-.track-title{
+.tracklist::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at center,
+rgba(0,102,255,.12),
+transparent 60%);
+pointer-events:none;
+}
+
+.tracklist h2{
+position:relative;
+z-index:3;
+
 font-family:'Bebas Neue',sans-serif;
-font-size:130px;
-line-height:.9;
-margin-bottom:25px;
-}
+font-size:120px;
+text-align:center;
+margin-bottom:80px;
+letter-spacing:6px;
 
-.track-title span{
-color:#3ea6ff;
-text-shadow:0 0 20px #3ea6ff;
-}
+color:white;
 
-.quote{
-font-family:'Caveat',cursive;
-font-size:36px;
-color:#ff4ca8;
-margin-bottom:70px;
+text-shadow:
+0 0 15px #ff1493,
+0 0 30px rgba(255,20,147,.5);
 }
 
 .grid{
+position:relative;
+z-index:3;
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
 .song{
-padding:25px;
-border-radius:25px;
-
-background:rgba(255,255,255,.04);
+padding:28px;
 
 border:1px solid rgba(255,255,255,.08);
 
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(8px);
+
+border-radius:25px;
 
 transition:.3s;
 }
 
 .song:hover{
-transform:translateY(-7px);
-border-color:#ff0a8c;
+transform:translateY(-8px);
+
+border-color:#ff1493;
 
 box-shadow:
-0 0 20px rgba(255,0,140,.25);
+0 0 20px rgba(255,20,147,.35),
+0 0 40px rgba(0,102,255,.2);
 }
 
-.number{
-font-size:13px;
-letter-spacing:3px;
-color:#ff0a8c;
+.song-number{
+font-size:14px;
+color:#ff1493;
 margin-bottom:10px;
+font-weight:700;
+letter-spacing:2px;
 }
 
 .song h3{
-font-family:'Caveat',cursive;
-font-size:30px;
+font-size:28px;
 margin-bottom:8px;
+font-family:'Bebas Neue',sans-serif;
+letter-spacing:1px;
 }
 
 .song p{
-opacity:.7;
+opacity:.75;
 font-size:14px;
 }
 
 /* FOOTER */
 
 .footer{
-padding:80px 8%;
-background:black;
+padding:90px 20px;
 text-align:center;
+background:#020202;
 }
 
-.footer h2{
-font-size:70px;
-font-family:'Bebas Neue',sans-serif;
-letter-spacing:5px;
-margin-bottom:15px;
+.footer-logo{
+font-size:60px;
+font-weight:900;
+letter-spacing:8px;
+}
+
+.footer span{
+color:#ff1493;
 }
 
 .footer p{
-opacity:.6;
-letter-spacing:3px;
-font-size:14px;
+margin-top:10px;
+opacity:.7;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-.pink{
+.hero{
+padding-top:120px;
+align-items:flex-start;
+}
+
+.character{
+right:-160px;
+height:78%;
+opacity:.45;
+}
+
+.tracklist h2{
+font-size:80px;
+}
+
+.title .pink,
+.title .blue{
 font-size:110px;
 }
 
-.blue{
-font-size:100px;
-}
-
-.desc{
-font-size:24px;
-}
-
-.about-title{
-font-size:80px;
-}
-
-.track-title{
-font-size:80px;
+.description{
+font-size:20px;
 }
 
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
 
-.hero{
-padding:60px 7%;
-background-position:72% center;
+.character{
+right:-180px;
+height:70%;
+opacity:.35;
 }
 
-.top{
-font-size:10px;
-letter-spacing:5px;
+.title .pink,
+.title .blue{
+font-size:85px;
 }
 
-.pink{
-font-size:78px;
-}
-
-.blue{
-font-size:72px;
-}
-
-.desc{
-font-size:19px;
-line-height:1.6;
+.tracklist h2{
+font-size:65px;
 }
 
 .btn{
-padding:18px 35px;
+padding:18px 38px;
 font-size:16px;
-}
-
-.about-title{
-font-size:60px;
-}
-
-.track-title{
-font-size:60px;
-}
-
-.quote{
-font-size:28px;
 }
 
 }
@@ -369,25 +328,27 @@ font-size:28px;
 
 <section class="hero">
 
-<div class="content">
+<img src="personaje.png" class="character">
 
-<div class="top">
+<div class="hero-content">
+
+<div class="top-text">
 DJ GIAN C & GROVE STUDIO PRESENTAN
 </div>
 
-<h1 class="title">
-<span class="pink">VERANO</span>
-<span class="blue">INVIERNO</span>
-</h1>
+<div class="title">
+<div class="pink">VERANO</div>
+<div class="blue">INVIERNO</div>
+</div>
 
-<p class="desc">
+<div class="description">
 18 canciones inspiradas en playas vacías,
 fuego azul, madrugadas eternas,
 corazones rotos y recuerdos
 que todavía siguen vivos.
-</p>
+</div>
 
-<a href="#tracklist" class="btn">
+<a href="#album" class="btn">
 ENTRAR AL ÁLBUM
 </a>
 
@@ -395,149 +356,118 @@ ENTRAR AL ÁLBUM
 
 </section>
 
-<!-- ABOUT -->
-
-<section class="about">
-
-<div class="about-content">
-
-<div class="section-small">
-SOBRE EL ÁLBUM
-</div>
-
-<h2 class="about-title">
-DOS CLIMAS <span>UNA HISTORIA</span>
-</h2>
-
-<p class="about-text">
-Un viaje entre el calor y el frío.
-Entre recuerdos que queman y noches que abrazan.
-Este álbum es pa’ los que todavía recuerdan a alguien
-cuando suena una canción a las 3AM.
-</p>
-
-</div>
-
-</section>
-
 <!-- TRACKLIST -->
 
-<section class="tracklist" id="tracklist">
+<section class="tracklist" id="album">
 
-<h2 class="track-title">
-TRACK<span>LIST</span>
-</h2>
-
-<p class="quote">
-“Dos climas, una historia, mil sentimientos.”
-</p>
+<h2>TRACKLIST</h2>
 
 <div class="grid">
 
 <div class="song">
-<div class="number">01</div>
+<div class="song-number">01</div>
 <h3>DOS CLIMAS</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">02</div>
+<div class="song-number">02</div>
 <h3>VERANO EN INVIERNO</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">03</div>
+<div class="song-number">03</div>
 <h3>+ FRÍO Q AYER</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">04</div>
+<div class="song-number">04</div>
 <h3>NOCHES X LA PLAYA</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">05</div>
+<div class="song-number">05</div>
 <h3>OJOS CANSADOS</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">06</div>
+<div class="song-number">06</div>
 <h3>M NO MIENTAS</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">07</div>
+<div class="song-number">07</div>
 <h3>CORA ROTO :)</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">08</div>
+<div class="song-number">08</div>
 <h3>3ER OJO</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">09</div>
+<div class="song-number">09</div>
 <h3>FLASHBACKS</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">10</div>
+<div class="song-number">10</div>
 <h3>FUEGO AZUL</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">11</div>
+<div class="song-number">11</div>
 <h3>MADRUGÁ</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">12</div>
+<div class="song-number">12</div>
 <h3>X SI VUELVES</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">13</div>
+<div class="song-number">13</div>
 <h3>MOJANDO LA CITY</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">14</div>
+<div class="song-number">14</div>
 <h3>NADIE NOS VIO</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">15</div>
+<div class="song-number">15</div>
 <h3>KM DE DISTANCIA</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">16</div>
+<div class="song-number">16</div>
 <h3>POLAROID</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
 
 <div class="song">
-<div class="number">17</div>
+<div class="song-number">17</div>
 <h3>EL FINAL DEL VERANO</h3>
 <p>Prod. Grove Studio</p>
 </div>
 
 <div class="song">
-<div class="number">18</div>
+<div class="song-number">18</div>
 <h3>TÚ + YO EN DICIEMBRE</h3>
 <p>Prod. DJ GiAN C</p>
 </div>
@@ -546,12 +476,16 @@ TRACK<span>LIST</span>
 
 </section>
 
+<!-- FOOTER -->
+
 <footer class="footer">
 
-<h2>GROVE STUDIO</h2>
+<div class="footer-logo">
+GROVE <span>STUDIO</span>
+</div>
 
 <p>
-DJ GIAN C — VERANO EN INVIERNO © 2026
+DJ GiAN C © 2026
 </p>
 
 </footer>
