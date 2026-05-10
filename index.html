@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VERANO EN INVIERNO — DJ GiAN C & GROVE STUDIO</title>
+<title>VERANO EN INVIERNO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,245 +18,230 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Montserrat',sans-serif;
 background:#000;
-color:white;
+font-family:'Montserrat',sans-serif;
 overflow-x:hidden;
+color:white;
 }
 
-/* FONDO */
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.88)),
-url('bg.jpg') center/cover no-repeat;
-z-index:-3;
-}
+/* HEADER */
 
-/* BRILLOS */
-body::after{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top left, rgba(255,0,128,.25), transparent 35%),
-radial-gradient(circle at right, rgba(0,153,255,.18), transparent 35%);
-z-index:-2;
-}
-
-/* NAV */
-
-nav{
+header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:20px 8%;
+padding:20px 40px;
 display:flex;
-justify-content:space-between;
+justify-content:flex-end;
 align-items:center;
+z-index:1000;
+background:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);
 backdrop-filter:blur(10px);
-background:rgba(0,0,0,.25);
-z-index:999;
-border-bottom:1px solid rgba(255,255,255,.05);
 }
 
-.logo{
-font-weight:900;
-font-size:1.2rem;
-letter-spacing:2px;
-}
-
-.logo span{
-color:#ff008c;
-}
-
-.nav-right{
-display:flex;
-gap:20px;
-align-items:center;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:.95rem;
-opacity:.8;
-transition:.3s;
-}
-
-nav a:hover{
-opacity:1;
-color:#ff008c;
-}
-
-.lang-select{
+select{
 background:#111;
-border:1px solid rgba(255,255,255,.1);
+border:none;
 color:white;
-padding:8px 12px;
-border-radius:10px;
+padding:12px 18px;
+border-radius:12px;
+font-size:15px;
+outline:none;
 }
 
 /* HERO */
 
 .hero{
+position:relative;
 min-height:100vh;
 display:flex;
 align-items:center;
-justify-content:space-between;
-padding:120px 8% 60px;
-position:relative;
+padding:120px 80px;
 overflow:hidden;
+background:
+linear-gradient(to right,
+rgba(0,0,0,.55) 0%,
+rgba(0,0,0,.82) 45%,
+rgba(0,0,0,.2) 100%);
 }
 
-.hero-text{
-max-width:700px;
-z-index:2;
+/* FONDO */
+
+.bg{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
+filter:brightness(.45);
 }
 
-.small-top{
-letter-spacing:8px;
-font-size:.8rem;
-opacity:.7;
-margin-bottom:10px;
-}
+/* OVERLAY */
 
-.title{
-line-height:.9;
-margin-bottom:25px;
-}
-
-.title .pink{
-display:block;
-font-size:7rem;
-font-weight:900;
-color:#ff008c;
-text-shadow:0 0 30px rgba(255,0,140,.8);
-}
-
-.title .blue{
-display:block;
-font-size:7rem;
-font-weight:900;
-color:#4aa8ff;
-text-shadow:0 0 30px rgba(74,168,255,.8);
-}
-
-.desc{
-font-size:1.2rem;
-line-height:2;
-max-width:650px;
-font-family:'Caveat',cursive;
-margin-bottom:40px;
-color:#f1f1f1;
-}
-
-.btns{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:18px 38px;
-border-radius:100px;
-font-weight:700;
-text-decoration:none;
-transition:.3s;
-}
-
-.btn-primary{
-background:linear-gradient(90deg,#ff008c,#4aa8ff);
-color:white;
-box-shadow:0 0 30px rgba(255,0,140,.4);
-}
-
-.btn-primary:hover{
-transform:translateY(-5px) scale(1.03);
-}
-
-.btn-secondary{
-border:1px solid rgba(255,255,255,.15);
-color:white;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-}
-
-.btn-secondary:hover{
-border-color:#4aa8ff;
+.overlay{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at left,#ff008850 0%,transparent 40%),
+radial-gradient(circle at right,#008cff40 0%,transparent 40%);
+z-index:-2;
 }
 
 /* PERSONAJE */
 
 .character{
 position:absolute;
-right:-80px;
-bottom:0;
-height:95vh;
-z-index:1;
+right:-40px;
+bottom:-40px;
+height:95%;
+z-index:2;
 filter:
-drop-shadow(0 0 40px rgba(0,110,255,.6))
-drop-shadow(0 0 80px rgba(0,110,255,.3));
-animation:float 5s ease-in-out infinite;
+drop-shadow(0 0 40px #009dff)
+drop-shadow(0 0 80px #0051ff);
+opacity:.95;
+mix-blend-mode:screen;
 pointer-events:none;
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
+/* CONTENIDO */
+
+.content{
+max-width:750px;
+z-index:5;
+}
+
+.small{
+letter-spacing:10px;
+font-size:14px;
+opacity:.8;
+margin-bottom:20px;
+}
+
+.title{
+font-size:110px;
+font-weight:900;
+line-height:.9;
+text-transform:uppercase;
+}
+
+.title span{
+display:block;
+}
+
+.pink{
+color:#ff008c;
+text-shadow:0 0 25px #ff008c;
+}
+
+.blue{
+color:#46a8ff;
+text-shadow:0 0 25px #46a8ff;
+}
+
+.desc{
+margin-top:40px;
+font-size:22px;
+line-height:1.8;
+font-family:'Caveat',cursive;
+max-width:700px;
+color:#fff;
+}
+
+/* BOTONES */
+
+.buttons{
+display:flex;
+gap:25px;
+margin-top:45px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 40px;
+border-radius:50px;
+font-weight:700;
+font-size:18px;
+text-decoration:none;
+transition:.3s;
+}
+
+.primary{
+background:linear-gradient(90deg,#ff008c,#3b82f6);
+color:white;
+box-shadow:0 0 25px #ff008c80;
+}
+
+.primary:hover{
+transform:scale(1.05);
+}
+
+.secondary{
+border:1px solid rgba(255,255,255,.2);
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+color:white;
 }
 
 /* TRACKLIST */
 
 .tracklist{
-padding:120px 8%;
 position:relative;
+padding:140px 80px;
+background:#000;
+overflow:hidden;
 }
 
-.section-title{
-font-size:4rem;
+.tracklist::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left,#ff008830 0%,transparent 40%),
+radial-gradient(circle at bottom right,#008cff20 0%,transparent 40%);
+pointer-events:none;
+}
+
+.track-title{
+font-size:90px;
 font-weight:900;
-margin-bottom:60px;
-line-height:1;
+margin-bottom:70px;
+text-transform:uppercase;
+color:white;
+text-shadow:0 0 20px #ff008c;
 }
 
-.section-title span{
-color:#ff008c;
-}
-
-.grid{
+.songs{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 }
 
 .song{
+padding:30px;
+border-radius:25px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
-padding:28px;
-border-radius:25px;
-backdrop-filter:blur(10px);
-transition:.35s;
+backdrop-filter:blur(15px);
+transition:.3s;
 }
 
 .song:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 border-color:#ff008c;
-box-shadow:0 0 30px rgba(255,0,140,.18);
+box-shadow:0 0 30px #ff008840;
 }
 
 .song-number{
-font-size:.9rem;
-opacity:.5;
+font-size:14px;
+color:#ff008c;
 margin-bottom:10px;
+font-weight:700;
 }
 
 .song h3{
-font-size:1.4rem;
+font-size:28px;
 margin-bottom:10px;
 }
 
@@ -266,79 +251,76 @@ opacity:.6;
 
 /* FOOTER */
 
-footer{
-padding:70px 8%;
-text-align:center;
+.footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:40px 60px;
+background:#000;
 border-top:1px solid rgba(255,255,255,.08);
-background:rgba(0,0,0,.5);
-backdrop-filter:blur(10px);
+flex-wrap:wrap;
+gap:20px;
 }
 
-.footer-logo{
-font-size:4rem;
+.footer-left{
+font-size:28px;
+font-weight:700;
+font-family:'Caveat',cursive;
+color:white;
+}
+
+.footer-center{
+font-size:55px;
 font-weight:900;
-margin-bottom:10px;
+color:white;
 }
 
-.footer-logo span{
+.footer-center span{
 color:#ff008c;
 }
 
-footer p{
-opacity:.6;
+.footer-right img{
+width:120px;
+filter:brightness(1.2);
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
 .hero{
-flex-direction:column;
-justify-content:center;
-text-align:center;
-padding-top:150px;
+padding:120px 30px;
 }
 
-.hero-text{
-max-width:100%;
-}
-
-.title .pink,
-.title .blue{
-font-size:4.5rem;
+.title{
+font-size:70px;
 }
 
 .character{
-position:relative;
-right:auto;
-height:70vh;
-margin-top:40px;
-}
-
-.btns{
-justify-content:center;
-}
-
-}
-
-@media(max-width:600px){
-
-.title .pink,
-.title .blue{
-font-size:3.2rem;
-}
-
-.section-title{
-font-size:2.7rem;
+height:70%;
+opacity:.45;
+right:-120px;
 }
 
 .desc{
-font-size:1rem;
-line-height:1.8;
+font-size:17px;
 }
 
-.character{
-height:55vh;
+.track-title{
+font-size:55px;
+}
+
+.footer{
+flex-direction:column;
+text-align:center;
+}
+
+.footer-center{
+font-size:38px;
+}
+
+.footer-right img{
+width:90px;
 }
 
 }
@@ -348,51 +330,48 @@ height:55vh;
 
 <body>
 
-<nav>
+<header>
 
-<div class="logo">
-GROVE <span>STUDIO</span>
-</div>
-
-<div class="nav-right">
-
-<a href="#album">ÁLBUM</a>
-<a href="#tracklist">TRACKLIST</a>
-
-<select class="lang-select" onchange="changeLanguage(this.value)">
-<option value="es">🇪🇸 Español</option>
-<option value="en">🇺🇸 English</option>
-<option value="pt">🇧🇷 Português</option>
+<select>
+<option>ES Español</option>
+<option>EN English</option>
+<option>PT Português</option>
 </select>
 
-</div>
+</header>
 
-</nav>
+<section class="hero">
 
-<section class="hero" id="album">
+<img src="bg.jpg" class="bg">
+<div class="overlay"></div>
 
-<div class="hero-text">
+<img src="character.png" class="character">
 
-<div class="small-top" id="presentan">
-DJ GIAN C & GROVE STUDIO PRESENTAN
+<div class="content">
+
+<div class="small">
+DJ GIAN C PRESENTA
 </div>
 
 <h1 class="title">
-<span class="pink" id="summer">VERANO</span>
-<span class="blue" id="winter">INVIERNO</span>
+<span class="pink">VERANO</span>
+<span class="blue">INVIERNO</span>
 </h1>
 
-<p class="desc" id="desc">
-18 canciones inspiradas en playas vacías, fuego azul, madrugadas eternas, corazones rotos y recuerdos que todavía siguen vivos.
+<p class="desc">
+18 canciones inspiradas en playas vacías,
+fuego azul, madrugadas eternas,
+corazones rotos y recuerdos
+que todavía siguen vivos.
 </p>
 
-<div class="btns">
+<div class="buttons">
 
-<a href="#tracklist" class="btn btn-primary" id="btn1">
+<a href="#album" class="btn primary">
 ENTRAR AL ÁLBUM
 </a>
 
-<a href="#" class="btn btn-secondary" id="btn2">
+<a href="#" class="btn secondary">
 ESCUCHAR PRONTO
 </a>
 
@@ -400,17 +379,15 @@ ESCUCHAR PRONTO
 
 </div>
 
-<img src="character.png" class="character">
-
 </section>
 
-<section class="tracklist" id="tracklist">
+<section class="tracklist" id="album">
 
-<h2 class="section-title">
-TRACK<span>LIST</span>
+<h2 class="track-title">
+TRACKLIST
 </h2>
 
-<div class="grid">
+<div class="songs">
 
 <div class="song">
 <div class="song-number">01</div>
@@ -484,67 +461,61 @@ TRACK<span>LIST</span>
 <p>Prod. DJ GiAN C</p>
 </div>
 
+<div class="song">
+<div class="song-number">13</div>
+<h3>MOJANDO LA CITY</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">14</div>
+<h3>NADIE NOS VIO</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">15</div>
+<h3>KM DE DISTANCIA</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">16</div>
+<h3>POLAROID</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
+<div class="song">
+<div class="song-number">17</div>
+<h3>EL FINAL DEL VERANO</h3>
+<p>Prod. Grove Studio</p>
+</div>
+
+<div class="song">
+<div class="song-number">18</div>
+<h3>TÚ + YO EN DICIEMBRE</h3>
+<p>Prod. DJ GiAN C</p>
+</div>
+
 </div>
 
 </section>
 
-<footer>
+<footer class="footer">
 
-<div class="footer-logo">
+<div class="footer-left">
+DJ GiAN C
+</div>
+
+<div class="footer-center">
 GROVE <span>STUDIO</span>
 </div>
 
-<p>
-DJ GiAN C © 2026
-</p>
+<div class="footer-right">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Parental_Advisory_label.svg">
+</div>
 
 </footer>
-
-<script>
-
-const translations = {
-
-es: {
-presentan: "DJ GIAN C & GROVE STUDIO PRESENTAN",
-summer: "VERANO",
-winter: "INVIERNO",
-desc: "18 canciones inspiradas en playas vacías, fuego azul, madrugadas eternas, corazones rotos y recuerdos que todavía siguen vivos.",
-btn1: "ENTRAR AL ÁLBUM",
-btn2: "ESCUCHAR PRONTO"
-},
-
-en: {
-presentan: "DJ GIAN C & GROVE STUDIO PRESENT",
-summer: "SUMMER",
-winter: "WINTER",
-desc: "18 songs inspired by empty beaches, blue fire, endless nights, broken hearts and memories that are still alive.",
-btn1: "ENTER THE ALBUM",
-btn2: "LISTEN SOON"
-},
-
-pt: {
-presentan: "DJ GIAN C & GROVE STUDIO APRESENTAM",
-summer: "VERÃO",
-winter: "INVERNO",
-desc: "18 músicas inspiradas em praias vazias, fogo azul, madrugadas eternas, corações partidos e memórias que ainda continuam vivas.",
-btn1: "ENTRAR NO ÁLBUM",
-btn2: "OUVIR EM BREVE"
-}
-
-};
-
-function changeLanguage(lang){
-
-document.getElementById("presentan").innerText = translations[lang].presentan;
-document.getElementById("summer").innerText = translations[lang].summer;
-document.getElementById("winter").innerText = translations[lang].winter;
-document.getElementById("desc").innerText = translations[lang].desc;
-document.getElementById("btn1").innerText = translations[lang].btn1;
-document.getElementById("btn2").innerText = translations[lang].btn2;
-
-}
-
-</script>
 
 </body>
 </html>
