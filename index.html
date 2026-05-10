@@ -24,7 +24,7 @@ overflow-x:hidden;
 color:white;
 }
 
-/* HEADER */
+/* NAV */
 
 header{
 position:fixed;
@@ -36,8 +36,8 @@ display:flex;
 justify-content:flex-end;
 align-items:center;
 z-index:1000;
-background:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);
-backdrop-filter:blur(10px);
+background:linear-gradient(to bottom,rgba(0,0,0,.85),transparent);
+backdrop-filter:blur(12px);
 }
 
 select{
@@ -59,11 +59,6 @@ display:flex;
 align-items:center;
 padding:120px 80px;
 overflow:hidden;
-background:
-linear-gradient(to right,
-rgba(0,0,0,.55) 0%,
-rgba(0,0,0,.82) 45%,
-rgba(0,0,0,.2) 100%);
 }
 
 /* FONDO */
@@ -78,13 +73,17 @@ z-index:-3;
 filter:brightness(.45);
 }
 
-/* OVERLAY */
+/* EFECTOS */
 
 .overlay{
 position:absolute;
 inset:0;
 background:
-radial-gradient(circle at left,#ff008850 0%,transparent 40%),
+linear-gradient(to right,
+rgba(0,0,0,.75) 0%,
+rgba(0,0,0,.45) 40%,
+rgba(0,0,0,.1) 100%),
+radial-gradient(circle at left,#ff008840 0%,transparent 40%),
 radial-gradient(circle at right,#008cff40 0%,transparent 40%);
 z-index:-2;
 }
@@ -93,22 +92,22 @@ z-index:-2;
 
 .character{
 position:absolute;
-right:-40px;
-bottom:-40px;
-height:95%;
+right:-80px;
+bottom:0;
+height:100%;
 z-index:2;
-filter:
-drop-shadow(0 0 40px #009dff)
-drop-shadow(0 0 80px #0051ff);
-opacity:.95;
-mix-blend-mode:screen;
 pointer-events:none;
+mix-blend-mode:screen;
+filter:
+drop-shadow(0 0 40px #008cff)
+drop-shadow(0 0 80px #0044ff);
+opacity:.95;
 }
 
 /* CONTENIDO */
 
 .content{
-max-width:750px;
+max-width:760px;
 z-index:5;
 }
 
@@ -120,7 +119,7 @@ margin-bottom:20px;
 }
 
 .title{
-font-size:110px;
+font-size:120px;
 font-weight:900;
 line-height:.9;
 text-transform:uppercase;
@@ -145,8 +144,7 @@ margin-top:40px;
 font-size:22px;
 line-height:1.8;
 font-family:'Caveat',cursive;
-max-width:700px;
-color:#fff;
+max-width:650px;
 }
 
 /* BOTONES */
@@ -198,7 +196,7 @@ content:"";
 position:absolute;
 inset:0;
 background:
-radial-gradient(circle at top left,#ff008830 0%,transparent 40%),
+radial-gradient(circle at top left,#ff008820 0%,transparent 40%),
 radial-gradient(circle at bottom right,#008cff20 0%,transparent 40%);
 pointer-events:none;
 }
@@ -208,13 +206,12 @@ font-size:90px;
 font-weight:900;
 margin-bottom:70px;
 text-transform:uppercase;
-color:white;
 text-shadow:0 0 20px #ff008c;
 }
 
 .songs{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
@@ -298,12 +295,12 @@ font-size:70px;
 
 .character{
 height:70%;
-opacity:.45;
+opacity:.5;
 right:-120px;
 }
 
 .desc{
-font-size:17px;
+font-size:18px;
 }
 
 .track-title{
@@ -343,14 +340,15 @@ width:90px;
 <section class="hero">
 
 <img src="bg.jpg" class="bg">
+
 <div class="overlay"></div>
 
-<img src="character.png" class="character">
+<img src="personaje.png" class="character">
 
 <div class="content">
 
 <div class="small">
-DJ GIAN C PRESENTA
+DJ GIAN C & GROVE STUDIO PRESENTAN
 </div>
 
 <h1 class="title">
