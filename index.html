@@ -353,11 +353,13 @@ padding:80px 25px;
 <section class="hero">
 
 <div class="language">
-<select>
-<option>ES Español</option>
-<option>EN English</option>
-<option>PT Português</option>
+<select
+  <select class="lang-select" onchange="changeLanguage(this.value)">
+<option value="es">🇪🇸 Español</option>
+<option value="en">🇺🇸 English</option>
+<option value="pt">🇧🇷 Português</option>
 </select>
+
 </div>
 
 <img src="personaje.png" class="personaje">
